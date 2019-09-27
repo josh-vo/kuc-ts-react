@@ -1,0 +1,63 @@
+{
+  "name": "dev",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@babel/polyfill": "^7.4.4",
+    "@kintone/kintone-ui-component": "file:../kintone-ui-component",
+    "babel-preset-stage-0": "^6.24.1",
+    "concurrently": "^4.1.2",
+    "cross-env": "^5.2.1",
+    "css-loader": "^3.2.0",
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.5.3",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.8",
+    "webpack-dev-server": "^3.8.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.5.5",
+    "@mdi/js": "^4.1.95",
+    "@mdi/light-js": "^0.2.63",
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-router-dom": "^4.3.5",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.6",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-react-app": "^9.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-router-dom": "^5.0.1",
+    "style-loader": "^1.0.0",
+    "uglifyjs-webpack-plugin": "^2.2.0"
+  },
+  "scripts": {
+    "react": "webpack-dev-server --config ./react/webpack.config.js  --mode development --hot",
+    "typescript": "webpack-dev-server --config ./typescript/webpack.config.js --mode development --hot",
+    "dev": "concurrently \"npm run react\" \"npm run typescript\"",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "build": "webpack --config ./typescript/webpack.config.js",
+    "build-react": "webpack --config ./react/webpack.config.js"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "sideEffects": false,
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
